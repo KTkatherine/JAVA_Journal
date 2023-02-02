@@ -1,5 +1,5 @@
 public class JavaSE_3_31 {
-    /*
+    /**
 
 Target:
   1.Basic Grammar
@@ -41,4 +41,9 @@ JDK(Java Development Kit), also known as J2SDK(Java2 Software Development Kit), 
     and the Java standard class library (rt.jar).
      *
      */
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+        System.out.println("My first name is :" + args[0]);
+        System.out.println("My second name is :" + args[1]);
+    }
 }
