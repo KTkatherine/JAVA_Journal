@@ -21,7 +21,7 @@ public class JavaSE_4_01 {
      8 basic type (It's all in lowercase):
         byte < short < int < long (8 byte: 2^63, 2^0)
 
-        float 4 byte
+        float 4 byte < double 8 byte
 
         char 2 byte
 
@@ -41,6 +41,9 @@ public class JavaSE_4_01 {
 
      Naming variables； Variables are all lowercase if there is only one word,
                 and Capitalize the first letter if there are more than one word: int age = 10; studentName = KT
+
+     final: A variable's data value modified by final cannot be changed, nor can its type be promoted.
+     
      */
 
     public static void main(String[] args) {
@@ -48,6 +51,8 @@ public class JavaSE_4_01 {
         // Print the value of Integer.MAX_VALUE
         System.out.println(a); // 2147483647
         //integer max value + 1 will exceed the int value */
+        long q = a + 1;
+        System.out.println(q);//-2147483648 --->>int = a+1 will overflow and use long to receive it.
 
         System.out.println("Integer.MAX_VALUE = " + Integer.MAX_VALUE);//2147483647
         System.out.println("Integer.MIX_VALUE = " + Integer.MIN_VALUE);//-2147483648
@@ -80,5 +85,20 @@ public class JavaSE_4_01 {
 
         //print \"Hello\"
         System.out.println("\\\"Hello\\\"");//\"Hello\"
+
+        //final
+        final byte j = 10;
+        final byte k = 20;
+        byte m = 30;
+        byte n = 40;
+        byte test1 = j + k;
+        //byte test2 = m + n;
+        //byte test3 = j + m;
+        int o = 50;
+        int p = 60;
+        int int1 = o + p;
+        System.out.println(test1);//30--->>byte
+        System.out.println(int1);;//110--->>int
+
     }
 }
