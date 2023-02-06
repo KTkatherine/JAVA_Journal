@@ -84,8 +84,32 @@ public class JavaSE_4_03 {
          ||逻辑与：Both operands are false and return false, and either is true.
          ! 取反：Operand true returns false and vice versa.
 
+            && and || :They all belong to short-circuit operators
+                && One expression returns false, and the remaining expressions are not evaluated
+                || One expression returns true, and the remaining expressions are not evaluated
 
+                    Boolean value for multiple operand, & and | can also said logical elements,
+                    but does not meet the short-circuit operator, all conditions will judge again.
          */
+        // &&
+        int l = 10;
+        int m = 20;
+        int n = 30;
+        System.out.println(l < m && m < n);//true
+        System.out.println(l < m && m > n);//false
+
+        // ||
+        System.out.println(l < m || m < n);//true
+        System.out.println(l < m || m > n);//ture
+
+        // !
+        System.out.println(!(m > n));//ture
+
+        //multiple operand
+        System.out.println(10 > 20 & 10 / 1 == 10);//false
+        System.out.println(10 < 20 & 10 / 1 == 10);//ture
+        System.out.println(10 > 20 | 10 / 1 == 10);//ture
+
 
 
 
