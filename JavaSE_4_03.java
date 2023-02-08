@@ -86,10 +86,11 @@ public class JavaSE_4_03 {
 
             && and || :They all belong to short-circuit operators
                 && One expression returns false, and the remaining expressions are not evaluated
-                || One expression returns true, and the remaining expressions are not evaluated
 
-                    Boolean value for multiple operand, & and | can also said logical elements,
-                    but does not meet the short-circuit operator, all conditions will judge again.
+                    || One expression returns true, and the remaining expressions are not evaluated
+
+                        Boolean value for multiple operand, & and | can also said logical elements,
+                        but does not meet the short-circuit operator, all conditions will judge again.
          */
         // &&
         int l = 10;
@@ -110,8 +111,49 @@ public class JavaSE_4_03 {
         System.out.println(10 < 20 & 10 / 1 == 10);//ture
         System.out.println(10 > 20 | 10 / 1 == 10);//ture
 
+        /**
+        2.5
+            & bitwise and 按位与: If both binary bits are 1, 1 is returned, otherwise 0 is returned.
 
+            | bitwise or 按位或：Both binary bits have a 1 and return 1, and both are 0 and return 0.
 
+            ~ Negate bitwise 按位取反： The bit is converted from 0 to 1, 1 to 0.  [Subtract 1 from the negative].
+
+            ^bitwise exclusive-OR按位异或： Two binary bits that are the same return 0 and different return 1
+         */
+        //&
+        System.out.println(l & m);//0
+
+        //|
+        System.out.println(l | m);//30
+
+        //~
+        int o = 10;
+        int p = -20;
+        System.out.println(~o);//-11
+        System.out.println(~p);//19
+
+        //^;
+        System.out.println( l ^ m);//30
+
+        /**
+         2.6 shift operation
+         10 << 1: binary bit shift to the left 1 position, which is the original number * 2. [10100], 10 << 2 [101000]
+         10 >> 1:binary bit shift to the right 1 position, which is the original number / 2. [101]
+
+         2.7 conditional operator
+         expression1 ? expression2: expression3
+         when exp1 is ture, then take the value of exp2, otherwise take the value of exp3
+         */
+        //conditional operator
+        int max = l > m ? l : m;
+        int min = l < m ? l : m;
+        System.out.println(max);//20
+        System.out.println(min);//10
+        
+        /**
+         precedence of operator: Parentheses surround operators that need to be evaluated first
+         */
 
 
 
