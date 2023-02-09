@@ -156,6 +156,23 @@ public class JavaSE_4_03 {
 
         /**
          1.1 if: single branch, multiple branch, branch statements are nested (分支语句嵌套)
+         if(expression1){}
+         if(expression2){}
+         //Expressions 1 and 2 can be satisfied at the same time
+
+         if(expression1){}
+         else if (expression2){}
+         Expressions 1 and 2 are mutually exclusive, we can only take if or else if.
+
+
+
+         writing criterion: {} is a code block
+
+         if(expression1){
+         } else if (expression2) {
+         } else {
+         }
+
          */
         int number = 10;
         if (number % 2 == 0) {
@@ -227,6 +244,27 @@ public class JavaSE_4_03 {
         int s = 1;
         System.out.println(++s);//2
         System.out.println(s++);//2
+
+        //*** The else matches the closest if
+        int x = 10;
+        int y = 20;
+        if (x != 10){
+            if (y == 20){
+                System.out.println("Yes");
+            }
+        }else {
+            System.out.println("No");
+        }//No
+
+        /***
+         Switch
+         
+
+         */
+
+
+
+
 
 
 
