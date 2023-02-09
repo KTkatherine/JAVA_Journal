@@ -36,7 +36,7 @@ public class JavaSE_4_03 {
 
         // String ---> int    using Interger.parseint()
         String str = "123";
-        int g =  Integer.parseInt(str);
+        int g = Integer.parseInt(str);
         System.out.println(g);//123
 
         //String str3 = "1a2b3"; ---> str included the non - number
@@ -52,18 +52,17 @@ public class JavaSE_4_03 {
         System.out.println(153 % 100);//53
         System.out.println(153 % 1);//0
         System.out.println(153 / 100 % 10);//1
-            // ---> 不想要那几位就直接除以10^n
+        // ---> 不想要那几位就直接除以10^n
         double h = 11.5;
         int i = 2;
         System.out.println(h % i);//1.5
 
         /**
-         2.2 Incremental assignment
+         2.2 Incremental assignment（增量赋值运算）
          +=
-            a += 1 <=> a = a + 1
-
+         a += 1 <=> a = a + 1
          *=
-            b *= 2 <=> b = b * 2
+         b *= 2 <=> b = b * 2
          */
 
         /**
@@ -84,13 +83,13 @@ public class JavaSE_4_03 {
          ||逻辑与：Both operands are false and return false, and either is true.
          ! 取反：Operand true returns false and vice versa.
 
-            && and || :They all belong to short-circuit operators
-                && One expression returns false, and the remaining expressions are not evaluated
+         && and || :They all belong to short-circuit operators （短路操作符）
+         && One expression returns false, and the remaining expressions are not evaluated
 
-                    || One expression returns true, and the remaining expressions are not evaluated
+         || One expression returns true, and the remaining expressions are not evaluated
 
-                        Boolean value for multiple operand, & and | can also said logical elements,
-                        but does not meet the short-circuit operator, all conditions will judge again.
+         When multiple operand are Boolean value, & and | can also present logical elements,
+         but does not meet the short-circuit operator, all conditions will judge again.
          */
         // &&
         int l = 10;
@@ -112,14 +111,14 @@ public class JavaSE_4_03 {
         System.out.println(10 > 20 | 10 / 1 == 10);//ture
 
         /**
-        2.5
-            & bitwise and 按位与: If both binary bits are 1, 1 is returned, otherwise 0 is returned.
+         2.5
+         & bitwise and 按位与: If both binary bits are 1, 1 is returned, otherwise 0 is returned.
 
-            | bitwise or 按位或：Both binary bits have a 1 and return 1, and both are 0 and return 0.
+         | bitwise or 按位或：Both binary bits have a 1 and return 1, and both are 0 and return 0.
 
-            ~ Negate bitwise 按位取反： The bit is converted from 0 to 1, 1 to 0.  [Subtract 1 from the negative].
+         ~ Negate bitwise 按位取反： The bit is converted from 0 to 1, 1 to 0.  [Subtract 1 from the negative].
 
-            ^bitwise exclusive-OR按位异或： Two binary bits that are the same return 0 and different return 1
+         ^bitwise exclusive-OR按位异或： Two binary bits that are the same return 0 and different return 1
          */
         //&
         System.out.println(l & m);//0
@@ -134,7 +133,7 @@ public class JavaSE_4_03 {
         System.out.println(~p);//19
 
         //^;
-        System.out.println( l ^ m);//30
+        System.out.println(l ^ m);//30
 
         /**
          2.6 shift operation
@@ -150,10 +149,74 @@ public class JavaSE_4_03 {
         int min = l < m ? l : m;
         System.out.println(max);//20
         System.out.println(min);//10
-        
+
         /**
          precedence of operator: Parentheses surround operators that need to be evaluated first
          */
+
+        /**
+         1.1 if: single branch, multiple branch, branch statements are nested (分支语句嵌套)
+         */
+        int number = 10;
+        if (number % 2 == 0) {
+            System.out.println("even number");
+        } else {
+            System.out.println("odd number");
+        }// even number
+
+        //multiple branch
+        int testNum = 0;
+        if (testNum > 0) {
+            System.out.println("positive value");
+        } else if (testNum < 0) {
+            System.out.println("negative value");
+        } else {
+            System.out.println("value is 0");
+        }
+
+        //Branch statements are nested
+        // Leap years are divided into century leap years and ordinary leap years, Century leap years are divisible by 400.
+        //--->>When a year is divisible by 100, judge the century leap year to divide by 400.
+        int year = 1992;
+
+        if (year % 100 == 0) {
+            if (year % 400 == 0){
+            //this time the year is a multiple of 100, we goto judge if it is a century leap year
+                System.out.println("Century leap year");
+            } else {
+                System.out.println("Not a leap year");
+            }
+        }else {
+            // this year is not a multiple of 100, we goto judge if it is an ordinary leap year
+            if (year % 4 == 0) {
+                System.out.println("ordinary leap year");
+                } else {
+                System.out.println("not leap year");
+            }
+            // 2000: Century leap year //1990: not leap year //1992: ordinary leap year
+        }
+
+        //Suppose you have a two-digit number.Count the number of times that a 9 appears in this number.
+        // count ++ = count + 1.
+        int number9 = 99;
+        int count = 0;
+        if (num % 10 == 9);{
+            count ++;
+        }// the units of this number is 9.
+
+        if (number9 / 10 == 9) {//the tens of this number is 9
+            count ++;
+        }
+        System.out.println(count);//2
+
+        int countNum = 1;
+                if (countNum  ++== 2 ){
+                    System.out.println("true");
+                }
+
+
+
+
 
 
 
