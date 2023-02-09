@@ -197,7 +197,7 @@ public class JavaSE_4_03 {
         }
 
         //Suppose you have a two-digit number.Count the number of times that a 9 appears in this number.
-        // count ++ = count + 1.
+        // count ++ <=> count = count + 1.
         int number9 = 99;
         int count = 0;
         if (num % 10 == 9);{
@@ -210,9 +210,27 @@ public class JavaSE_4_03 {
         System.out.println(count);//2
 
         int countNum = 1;
-                if (countNum  ++== 2 ){
-                    System.out.println("true");
+                if (countNum ++ == 2 ){
+                    System.out.println("true1");
                 }
+                if (++countNum == 3);
+        System.out.println("true2");//true2
+
+        int countNumber = 1;
+        if (countNumber ++ == 1 ) {
+            System.out.println("true1");
+        }// true1
+
+        int r = 1;
+        System.out.println(r++);//1 count++是后加，即先赋值在做加法
+        System.out.println(++r);//3 ++count 是先自加，即先做加法再赋值
+        int s = 1;
+        System.out.println(++s);//2
+        System.out.println(s++);//2
+
+
+
+
 
 
 
