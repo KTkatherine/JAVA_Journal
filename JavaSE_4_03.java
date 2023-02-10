@@ -257,10 +257,74 @@ public class JavaSE_4_03 {
         }//No
 
         /***
-         Switch
-         
-
+         Switch: indicates multiple selection.
+         Switch can only use to (int /char /enum /String), met the break or finished all the branch then
+         it's going to stop the progress.
          */
+        int day = 5;
+        switch (day) {
+            case 1 :
+                System.out.println("Monday");//day = 1 // Monday
+                break;
+            case 2 :
+                System.out.println("Tuesday");//day = 2 // Tuesday
+
+            case 3 :
+                System.out.println("Wednesday");//day = 3, remove case 2 and case 3's break. // Wednesday (& next lane) Thursday
+
+            case 4 :
+                System.out.println("Thursday");//day =
+                break;
+            case 5 :
+                System.out.println("Friday");//day = 5 // Friday
+                break;
+            case 6 :
+                System.out.println("Saturday");//day =
+                break;
+            default:
+                System.out.println("Sunday");//day =
+                break;
+        }
+
+        /**
+         while
+         while(loop termination condition ---> the expression is true,
+                then execute the loop body code until the expression returns false){
+         //loop body code
+         }
+         */
+        // print out 1 to 10
+        int numW = 1;
+        while (numW <= 10) {
+            System.out.println(numW);
+            numW +=1;
+        }//vertical vision: 1 2 3 4 5 6 7 8 9 10
+
+        int numT = 1;
+        while (numT <= 10) {
+            numT +=1;
+        }
+            System.out.println(numT);// 11
+
+        int numS = 1;
+        while (numS <= 10) {
+            numS += 1;
+            System.out.println(numS);
+        }//vertical vision: 2 3 4 5 6 7 8 9 10 11    */
+
+        //calculate the sum from 1 to 10
+        int numSum = 1;
+        int rSum = 0;//存储最后的计算结果
+        while (numSum <= 10) {
+            rSum += numSum; // rSum = rSum + numSum
+            numSum += 1;
+        }
+        System.out.println(rSum);//55
+
+        System.out.println();
+
+
+
 
 
 
