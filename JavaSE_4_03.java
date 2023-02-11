@@ -197,17 +197,17 @@ public class JavaSE_4_03 {
         int year = 1992;
 
         if (year % 100 == 0) {
-            if (year % 400 == 0){
-            //this time the year is a multiple of 100, we goto judge if it is a century leap year
+            if (year % 400 == 0) {
+                //this time the year is a multiple of 100, we goto judge if it is a century leap year
                 System.out.println("Century leap year");
             } else {
                 System.out.println("Not a leap year");
             }
-        }else {
+        } else {
             // this year is not a multiple of 100, we goto judge if it is an ordinary leap year
             if (year % 4 == 0) {
                 System.out.println("ordinary leap year");
-                } else {
+            } else {
                 System.out.println("not leap year");
             }
             // 2000: Century leap year //1990: not leap year //1992: ordinary leap year
@@ -217,24 +217,25 @@ public class JavaSE_4_03 {
         // count ++ <=> count = count + 1.
         int number9 = 99;
         int count = 0;
-        if (num % 10 == 9);{
-            count ++;
+        if (num % 10 == 9) ;
+        {
+            count++;
         }// the units of this number is 9.
 
         if (number9 / 10 == 9) {//the tens of this number is 9
-            count ++;
+            count++;
         }
         System.out.println(count);//2
 
         int countNum = 1;
-                if (countNum ++ == 2 ){
-                    System.out.println("true1");
-                }
-                if (++countNum == 3);
+        if (countNum++ == 2) {
+            System.out.println("true1");
+        }
+        if (++countNum == 3) ;
         System.out.println("true2");//true2
 
         int countNumber = 1;
-        if (countNumber ++ == 1 ) {
+        if (countNumber++ == 1) {
             System.out.println("true1");
         }// true1
 
@@ -248,11 +249,11 @@ public class JavaSE_4_03 {
         //*** The else matches the closest if
         int x = 10;
         int y = 20;
-        if (x != 10){
-            if (y == 20){
+        if (x != 10) {
+            if (y == 20) {
                 System.out.println("Yes");
             }
-        }else {
+        } else {
             System.out.println("No");
         }//No
 
@@ -263,22 +264,22 @@ public class JavaSE_4_03 {
          */
         int day = 5;
         switch (day) {
-            case 1 :
+            case 1:
                 System.out.println("Monday");//day = 1 // Monday
                 break;
-            case 2 :
+            case 2:
                 System.out.println("Tuesday");//day = 2 // Tuesday
 
-            case 3 :
+            case 3:
                 System.out.println("Wednesday");//day = 3, remove case 2 and case 3's break. // Wednesday (& next lane) Thursday
 
-            case 4 :
+            case 4:
                 System.out.println("Thursday");//day =
                 break;
-            case 5 :
+            case 5:
                 System.out.println("Friday");//day = 5 // Friday
                 break;
-            case 6 :
+            case 6:
                 System.out.println("Saturday");//day =
                 break;
             default:
@@ -288,23 +289,26 @@ public class JavaSE_4_03 {
 
         /**
          while
-         while(loop termination condition ---> the expression is true,
-                then execute the loop body code until the expression returns false){
+
+         while (loop termination condition ---> the expression is true,
+         then execute the loop body code until the expression returns false){
          //loop body code
          }
+
+         In while: break means stop current loop, continue means skip this loop and continue to the next one
          */
         // print out 1 to 10
         int numW = 1;
         while (numW <= 10) {
             System.out.println(numW);
-            numW +=1;
+            numW += 1;
         }//vertical vision: 1 2 3 4 5 6 7 8 9 10
 
         int numT = 1;
         while (numT <= 10) {
-            numT +=1;
+            numT += 1;
         }
-            System.out.println(numT);// 11
+        System.out.println(numT);// 11
 
         int numS = 1;
         while (numS <= 10) {
@@ -321,7 +325,26 @@ public class JavaSE_4_03 {
         }
         System.out.println(rSum);//55
 
-        System.out.println();
+        //use while loop to calculate 10! (10 factorial) = 10 * 9 * 8 * 7......* 1
+
+        int numfac = 1;//计算每个阶乘的和
+        int rfac = 0;//计算当前numfac走到哪个数了
+        while (numfac <= 5) {
+            //每次循环记录当前的阶乘值
+            int tmprfac = 1;
+            int tmp = 1;
+            //计算当前num 的阶乘值 1*2*3*4*5...*numfac
+            while (tmp < numfac) {
+            tmprfac *= tmp;
+            tmp++;
+            }
+        //此时tmprfac就存储了当前numtmp的阶乘值
+        rfac += tmprfac;
+        numfac++;
+        }
+        System.out.println(rfac);//34
+
+
 
 
 
