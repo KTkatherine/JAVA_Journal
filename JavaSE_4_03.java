@@ -11,7 +11,6 @@ public class JavaSE_4_03 {
 
      int <-> string
      */
-
         //int--->char
     public static void main(String[] args) {
         char a = 'a';
@@ -326,23 +325,72 @@ public class JavaSE_4_03 {
         System.out.println(rSum);//55
 
         //use while loop to calculate 10! (10 factorial) = 10 * 9 * 8 * 7......* 1
-
-        int numfac = 1;//计算每个阶乘的和
-        int rfac = 0;//计算当前numfac走到哪个数了
-        while (numfac <= 5) {
-            //每次循环记录当前的阶乘值
-            int tmprfac = 1;
-            int tmp = 1;
-            //计算当前num 的阶乘值 1*2*3*4*5...*numfac
-            while (tmp < numfac) {
-            tmprfac *= tmp;
-            tmp++;
-            }
-        //此时tmprfac就存储了当前numtmp的阶乘值
-        rfac += tmprfac;
-        numfac++;
+        int numberf = 1;
+        int resultf = 1;//不能为0 , 否则最后一乘结果就为0了
+        while (numberf <= 10) {
+            resultf *= numberf;
+            numberf ++;
         }
-        System.out.println(rfac);//34
+        System.out.println(resultf);//3628800
+
+        //calculate: 1! + 2! + 3! + 4! + 5!
+        int num5f = 1;//走1这个数
+        int result5f = 0;//计算每个阶乘的和,所以从0开始,从1 开始就多加了一次.
+        while (num5f <= 5) {//计算当前num5f走到哪个数了
+            int tmpResult5 = 1;//每次循环记录当前的阶乘值
+            int tmp = 1;//内层循环
+            //计算当前num5f 的阶乘值 1*2*..*计算当前num5f
+            while (tmp <= num5f) {
+                tmpResult5 *= tmp;
+                tmp++;
+            }//此时tmpr5f就存储了当前num5f的阶乘值
+            result5f += tmpResult5;
+            num5f++;
+        }
+        System.out.println(result5f);//153
+
+        int num5 = 1;
+        int r5 = 0;
+        while (num5 < 5) {
+            int tempnum = 1;
+            int tempr = 1;
+            while (tempnum <= num5) {
+                tempr *= tempnum;
+                tempnum++;
+            }
+
+            r5 += tempr;
+            num5++;
+        }
+        System.out.println(r5);//33 (=1! + 2! + 3! + 4! )
+
+        int numTest = 1;
+        int ret = 0;
+        while (numTest <= 5) {
+            int tmpRet = 1;
+            int tmp = 1;
+            while (tmp < numTest) {
+                tmpRet *= tmp;
+                tmp++;
+            }
+            ret += tmpRet;
+            numTest++;
+        }
+        System.out.println(ret);//34 (=1! + 2! + 3! + 4! +1 )
+
+        int numtest = 1;
+        int retT = 0;
+        while (numtest < 5) {
+            int tmpRT = 1;
+            int tmpT = 1;
+            while (tmpT < numtest) {//tmpT <=3
+                tmpRT *= tmpT; //1=1*1, 2=2*1, 3= 3*2
+                tmpT++;
+            }
+            retT += tmpRT;
+            numtest++;
+        }
+        System.out.println(retT);//10 (=1! + 2! + 3! + 1 )
 
 
 
