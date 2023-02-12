@@ -289,7 +289,7 @@ public class JavaSE_4_03 {
         /**
          while
 
-         while (loop termination condition ---> the expression is true,
+         while (终止条件 loop termination condition ---> the expression is true,
          then execute the loop body code until the expression returns false){
          //loop body code
          }
@@ -299,7 +299,8 @@ public class JavaSE_4_03 {
         // print out 1 to 10
         int numW = 1;
         while (numW <= 10) {
-            System.out.println(numW);
+            System.out.println(numW);// 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ..........,
+            // if numW = 0, this part going to print out 0 0 0 0 0 ....
             numW += 1;
         }//vertical vision: 1 2 3 4 5 6 7 8 9 10
 
