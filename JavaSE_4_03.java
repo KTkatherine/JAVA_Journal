@@ -334,7 +334,7 @@ public class JavaSE_4_03 {
         }
         System.out.println(resultf);//3628800
 
-        //calculate: 1! + 2! + 3! + 4! + 5!
+        //calculate: 1! + 2! + 3! + 4! + 5! = 1 + 2 + 6 + 24 + 120 = 153
         int num5f = 1;//走1这个数
         int result5f = 0;//计算每个阶乘的和,所以从0开始,从1 开始就多加了一次.
         while (num5f <= 5) {//计算当前num5f走到哪个数了
@@ -354,21 +354,21 @@ public class JavaSE_4_03 {
         int r5 = 0;
         while (num5 < 5) {
             int tempnum = 1;
-            int tempr = 1;
+            int tempr = 1;//计算每个阶乘的和,所以从0开始,从1 开始就多加了一次.
             while (tempnum <= num5) {
                 tempr *= tempnum;
                 tempnum++;
             }
-
             r5 += tempr;
             num5++;
+            //System.out.println(r5);// vertical vision:1 3 9 33
         }
         System.out.println(r5);//33 (=1! + 2! + 3! + 4! )
 
         int numTest = 1;
         int ret = 0;
         while (numTest <= 5) {
-            int tmpRet = 1;
+            int tmpRet = 1;//计算每个阶乘的和,所以从0开始,从1 开始就多加了一次.
             int tmp = 1;
             while (tmp < numTest) {
                 tmpRet *= tmp;
@@ -376,22 +376,42 @@ public class JavaSE_4_03 {
             }
             ret += tmpRet;
             numTest++;
+            //System.out.println(ret);//vertical vision:1 2 4 10 34
         }
-        System.out.println(ret);//34 (=1! + 2! + 3! + 4! +1 )
+        System.out.println(ret);//34
 
-        int numtest = 1;
-        int retT = 0;
+        int numtest = 1;// int numtest = 0; int reT = 0 //vertical vision:1 2 3 5 11
+        int retT = 0;//int retT = 1 //vertical vision:2 3 5 11 11
         while (numtest < 5) {
-            int tmpRT = 1;
-            int tmpT = 1;
+            int tmpRT = 1;//int tmpRT = 0,打印结果：vertical vision：0 0 0 0 0
+            int tmpT = 1;//int tmp = 0,打印结果：vertical vision：0 0 0 0 0
             while (tmpT < numtest) {//tmpT <=3
                 tmpRT *= tmpT; //1=1*1, 2=2*1, 3= 3*2
                 tmpT++;
             }
             retT += tmpRT;
             numtest++;
+            //System.out.println(retT);//vertical vision:1 2 4 10 10 (0+1 1+1 3+1 9+1)
         }
-        System.out.println(retT);//10 (=1! + 2! + 3! + 1 )
+        System.out.println(retT);//10
+
+        int nummTest = 1;
+        int reT = 0;
+        while (nummTest <= 5) {
+            int tmmpRet = 1;
+            int tmmp = 1;
+            while (tmmp <= nummTest) {
+                tmmpRet *= tmmp;
+                tmmp++;
+            }
+            reT += tmmpRet;
+            nummTest++;
+            System.out.println(reT);
+        }//(vertical vision)  1 3 9 33 153 >>> 1! 1!+2! 1!+2!+3! 1!+2!+3!+4! 1!+2!+3!+4!+5!
+        System.out.println(reT);//153
+
+        ///*** 只改变tmmp <= nummTest的符号//1 3 9 33 & 1 2 4 10 因为<= 就从1 开始， 二 < 从0开始每项加1？？？
+
 
 
 
