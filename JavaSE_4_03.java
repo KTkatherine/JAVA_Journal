@@ -295,6 +295,23 @@ public class JavaSE_4_03 {
          }
 
          In while: break means stop current loop, continue means skip this loop and continue to the next one
+
+         break 只能终止当前循环，
+            e.g. while() {
+                    while() {         《《《
+                    if() {
+                        break;
+                    }
+                }
+            }
+
+         想把外层循环也终止？
+            若此时需要跳出本次循环的同时跳出外层循环。有两种方法：
+         return;//终止当前方法的调用
+
+         break label的使用
+
+
          */
         // print out 1 to 10
         int numW = 1;
@@ -411,6 +428,93 @@ public class JavaSE_4_03 {
         System.out.println(reT);//153
 
         ///*** 只改变tmmp <= nummTest的符号//1 3 9 33 & 1 2 4 10 因为<= 就从1 开始， 二 < 从0开始每项加1？？？
+
+        //In while: break means stop current loop, continue means skip this loop and continue to the next one
+        //Write the program to output the first occurrence of a multiple of 3 between 100 and 200, and the loop terminates when the first multiple of 3 is found.
+        int numberM = 100;
+        while (numberM <= 200){
+            if (numberM % 3 == 0) {
+                System.out.println(numberM);
+                break;
+            }
+            numberM ++;
+        }//102
+       // System.out.println(numberM);//102
+
+        //Write the program to output all multiples of 3 between 100 and 200
+        int num3 = 100;
+        while (num3 <= 200) {
+            if (num3 % 3 != 0) {
+                num3++;
+                continue;
+            }
+            System.out.println("num3 is multiple of 3 " + num3);
+            num3++;
+        }//
+ /*     num3 is multiple of 3 102
+        num3 is multiple of 3 105
+        num3 is multiple of 3 108
+        num3 is multiple of 3 111
+        num3 is multiple of 3 114
+        num3 is multiple of 3 117
+        num3 is multiple of 3 120
+        num3 is multiple of 3 123
+        num3 is multiple of 3 126
+        num3 is multiple of 3 129
+        num3 is multiple of 3 132
+        num3 is multiple of 3 135
+        num3 is multiple of 3 138
+        num3 is multiple of 3 141
+        num3 is multiple of 3 144
+        num3 is multiple of 3 147
+        num3 is multiple of 3 150
+        num3 is multiple of 3 153
+        num3 is multiple of 3 156
+        num3 is multiple of 3 159
+        num3 is multiple of 3 162
+        num3 is multiple of 3 165
+        num3 is multiple of 3 168
+        num3 is multiple of 3 171
+        num3 is multiple of 3 174
+        num3 is multiple of 3 177
+        num3 is multiple of 3 180
+        num3 is multiple of 3 183
+        num3 is multiple of 3 186
+        num3 is multiple of 3 189
+        num3 is multiple of 3 192
+        num3 is multiple of 3 195
+        num3 is multiple of 3 198*/
+
+        //break label的使用
+        int numBL = 100;
+        alabel : while (numBL <= 200) {
+            int aSet = 1;
+            while (aSet <= 10) {
+                if (aSet % 3 == 0) {
+                    //直接推出两次循环
+                    System.out.println(aSet);//3
+                    break alabel;
+                }
+                aSet++;
+            }
+        }
+        System.out.println("The loop terminates both times");//The loop terminates both times
+
+        /**
+         
+
+
+         * */
+
+
+
+
+
+
+
+
+
+
 
 
 
