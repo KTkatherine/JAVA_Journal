@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class JavaSE_4_03 {
 
     /**
@@ -502,9 +504,108 @@ public class JavaSE_4_03 {
 
         /**
          
-
+         for(初始化条件1；循环终止条件2；更新循环变量3){
+         //循环体代码4
+         }
+         运行时：1243243243......
+         123 All three conditions are optional and can be empty
 
          * */
+        // print all the numbers from 0 - 10
+        for (int qn = 0; qn <= 10; qn++) {
+            System.out.println(qn);
+        }//vertical vision:0 1 2 3 4 5 6 7 8 9 10
+
+        //123 All three conditions are optional and can be empty
+        int in = 1;
+        for (;;) {
+            if (in > 10) { // 终止条件
+                break;
+            }
+            System.out.println(in);
+            in++;
+        }//vertical vision:0 1 2 3 4 5 6 7 8 9 10// in = 0 --->vertical vision:0 1 2 3 4 5 6 7 8 9 10
+
+        // use for to calculate 5 factorial
+        int numF = 0;//最外层循环表示数字从1走到5.
+        for (int Fi = 1; Fi <= 5; Fi++) {
+            int tempnumF = 1;//记录Fi 的阶乘值
+            for (int Fj = 1; Fj <= Fi ; Fj++) {//内层循环计算当前i 的阶乘值
+                tempnumF *= Fj;
+            }
+            numF += tempnumF;
+        }
+        System.out.println(numF);//153
+
+        /**
+         * System Output:
+            System.out.println(msg);//输出一个字符串，带换行
+            System.out.print(msg);//输出一个字符串，不带换行
+            System.out.printf(format, msg);//格式化输出 (格式化字符串) ---》 有个表的。
+         */
+        for (int q = 1; q < 11; q++) {
+            System.out.print(q + " ");//1 2 3 4 5 6 7 8 9 10
+        }
+
+
+       // format string
+        int numQ = 100;
+        System.out.printf("numQ = %d",numQ);//numQ = 100
+        // if in put "numQ = %b",numQ //numQ = true
+
+         /**
+          System Input: scanner
+            scanner ** = new Scanner(system.in)
+          */
+        Scanner scannerTest = new Scanner(System.in);
+
+        System.out.println("Please enter your name:");
+        String name = scannerTest.nextLine();//从键盘获取字符串输入
+
+        System.out.println("Please enter your age");
+        int age = scannerTest.nextInt();//从键盘获取一个整型
+
+        System.out.println("please enter your salary:");
+        double salary = scannerTest.nextDouble();//从键盘获取一个小数
+
+        System.out.println("The information you entered is as follows:");
+
+        System.out.println("name is:" + name + ", age is:" + age + ",salary is:" + salary);
+//        Please enter your name:
+//        katherine
+//        Please enter your age
+//        33
+//        please enter your salary:
+//        200000
+//        The information you entered is as follows:
+//        name is:katherine, age is:33,salary is:200000.0
+
+        //please enter your salary:
+        //100000000
+        //The information you entered is as follows:
+        //name is:kate, age is:22,salary is:1.0E8
+
+        // 从键盘循环读入数字
+        int result = 0;
+        while (scannerTest.hasNextInt()){//从键盘读取的是整数才继续循环
+            int iNum = scannerTest.nextInt();
+            result += iNum;
+        }
+        System.out.println(result);
+//        1
+//        3
+//        5
+//        7
+//        adads 不是一个整数hasNextInt() ---> false
+//        16
+
+
+
+
+
+
+
+
 
 
 
