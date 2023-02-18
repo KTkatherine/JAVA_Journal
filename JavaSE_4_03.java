@@ -585,7 +585,7 @@ public class JavaSE_4_03 {
         //The information you entered is as follows:
         //name is:kate, age is:22,salary is:1.0E8
 
-        // 从键盘循环读入数字
+        // 从键盘循环读入数字(Loop in numbers from the keyboard)
         int result = 0;
         while (scannerTest.hasNextInt()){//从键盘读取的是整数才继续循环
             int iNum = scannerTest.nextInt();
