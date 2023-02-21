@@ -1,3 +1,6 @@
+# Solving Problems with Java
+1.Print different age groups
+
 # JAVA_Journal
 3_31: Starting with Java: Set learning target, JRE & JDK, "Hello World".
 
