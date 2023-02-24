@@ -382,7 +382,7 @@ public class JavaSE_4_03 {
             num5++;
             //System.out.println(r5);// vertical vision:1 3 9 33
         }
-        System.out.println(r5);//33 (=1! + 2! + 3! + 4! )
+        System.out.println(r5);//33 (=1! + 2! + 3! + 4! ) ，少了5！=120
 
         int numTest = 1;
         int ret = 0;
@@ -398,6 +398,15 @@ public class JavaSE_4_03 {
             //System.out.println(ret);//vertical vision:1 2 4 10 34
         }
         System.out.println(ret);//34
+        ///*** 只改变tmmp <= nummTest的符号//1 3 9 33 & 1 2 4 10 因为<= 就从1 开始， 二 < 从0开始每项加1？？？
+        //解决了：
+        //the first loop ret = 1 第一次循环进去，由于1不小于1，所以ret +=1
+        //the second loop ret = 2 第二次由于1<2,但是只计算1*1，计算不到1*2，所以这时候ret+=1,此时等于2了。
+        //the third loop ret = 4 第三次由于1<3，但是只执行到1*2，所以此时ret+=2,此时等于4
+        //the fourth loop ret = 10 第四次由于1<4，但是只执行到1*2*3，所以此时ret+=6,此时等于10
+        //the fifth loop ret = 34
+
+
 
         int numtest = 1;// int numtest = 0; int reT = 0 //vertical vision:1 2 3 5 11
         int retT = 0;//int retT = 1 //vertical vision:2 3 5 11 11
@@ -429,7 +438,6 @@ public class JavaSE_4_03 {
         }//(vertical vision)  1 3 9 33 153 >>> 1! 1!+2! 1!+2!+3! 1!+2!+3!+4! 1!+2!+3!+4!+5!
         System.out.println(reT);//153
 
-        ///*** 只改变tmmp <= nummTest的符号//1 3 9 33 & 1 2 4 10 因为<= 就从1 开始， 二 < 从0开始每项加1？？？
 
         //In while: break means stop current loop, continue means skip this loop and continue to the next one
         //Write the program to output the first occurrence of a multiple of 3 between 100 and 200, and the loop terminates when the first multiple of 3 is found.
