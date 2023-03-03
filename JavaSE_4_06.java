@@ -79,7 +79,7 @@ public class JavaSE_4_06 {
         //return
         printNumber (100);//3
 
-
+        System.out.println(addDouble(10.5,11.6));//22.1
         }
 
 
@@ -118,7 +118,11 @@ public class JavaSE_4_06 {
         }
     }
 
-
+    //double
+    //两个参数相加，所有参数相同功能的方法我们要定义为相同名称
+    public static double addDouble(double a, double b){
+        return a + b;
+    }
 
 
 
