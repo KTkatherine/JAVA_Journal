@@ -19,10 +19,13 @@ public class JavaSE_4_06 {
 
      public static 方法返回值 方法名称 （方法参数。。。【0.。。N】）{
      //方法体代码
-     【return 语句】；
+     【return 语句】；//使用return 表示提前结束方法的调用。
      }
 
+    //Java中把两个局部变量的值做修改 只能通过数组或者引用 不能直接获得其局部变量X or Y 的地址，这也是java比C安全的原因之一。
 
+
+* please  explain the difference between overload（方法重载） and override （方法重写）
 
 
      */
@@ -47,10 +50,6 @@ public class JavaSE_4_06 {
         System.out.println(sum);//30
         // add 方法接收两个整型参数，返回c + d 的和；
 
-        // swap the values of two numbers
-        swap(X,Y);
-        System.out.println("X = " + X + ", Y = " + Y);
-
         //add方法
         int e = 30;
         int f = 70;
@@ -71,6 +70,16 @@ public class JavaSE_4_06 {
         //Calculate the Factorial value of 5
         //153
 
+        //Java中把两个局部变量的值做修改 只能通过数组或者引用 不能直接获得其局部变量X or Y 的地址，这也是java比C安全的原因之一。
+        int[] arr = {10,20};
+        swapArr(arr);
+        System.out.println("arr[0] = " + arr[0] + ",arr[1] = " + arr[1]);//arr[0] = 20,arr[1] = 10
+
+
+        //return
+        printNumber (100);//3
+
+
         }
 
 
@@ -90,14 +99,24 @@ public class JavaSE_4_06 {
         return ret;
     }
 
-    // swap the values of two numbers
-    public static void swap(int g,int h){
-        int temporary = m;
-        m = n;
-        n = temporary;//内部就把mn的值换了
-
+    //swap
+    public static void swapArr(int[] arr) {
+        int temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
     }
 
+    //return
+    //传入一个number,输出第一个从1.。。。。number的3的倍数
+    public static void printNumber (int number) {
+        for (int z = 1 ; z <= number ; z++) {
+            if (z % 3 == 0){//3的倍数
+                System.out.println(z);
+                return;//直接终止了本次方法的调用
+            }
+
+        }
+    }
 
 
 
