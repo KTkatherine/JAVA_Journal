@@ -26,7 +26,35 @@ public class JavaSE_4_06 {
 
 
 * please  explain the difference between overload（方法重载） and override （方法重写）
+     overload：发生“在同一个类中”，定义了若干个方法名称相同，参数列表不同（参数的类型或者个数）的一组方法，与返回值无关！
+                这样一组方法称为重载方法
 
+     e.g.// 名称一样，参数类型不同，个数不同
+     public static int add(int a,int b) {
+     int ret = a + b;
+     return ret;
+     }
+
+     public static double add(double a,double b) {//参数类型不同
+     return a + b;
+     }
+
+     public static int add(int a,int b, int c){//个数不同
+     return a + b +c;
+     }
+
+     Java中System.out.println(任意参数类型都可以)
+     实际上就是因为System这个类中定义了N个重载方法，用户直接用就可以了
+
+     e.g.//不是重载方法，只是返回值不同
+     public static int add(int a,int b) {
+     int ret = a + b;
+     return ret;
+     }
+
+     public static double add(int a,int b) {
+     return a + b;
+     }
 
      */
     public static void main(String[] args) {
@@ -120,6 +148,7 @@ public class JavaSE_4_06 {
 
     //double
     //两个参数相加，所有参数相同功能的方法我们要定义为相同名称
+    //最大程度的减少用户使用成本
     public static double addDouble(double a, double b){
         return a + b;
     }
