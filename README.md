@@ -1,5 +1,3 @@
-# Solving Problems with Java
-1.Print different age groups
 
 # JAVA_Journal
 3_31: Starting with Java: Set learning target, JRE & JDK, "Hello World".
@@ -8,5 +6,6 @@
 
 4_03： Operators, program structures and methods：Interchange between int and char, int and String. atithmetic operators, incremental assignment, relational and logical operators, bitwise & | ~ ^, shift and conditional operation. Set a code to find ordinary leap year and century leap year, if, switch, while loop, for loop, system output and input.
 
-04_06: Method overloading and recursion
+04_06: Method overloading and recursion: method, overload and override
 
+04_07:  Recursion
