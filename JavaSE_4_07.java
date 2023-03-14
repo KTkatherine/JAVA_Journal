@@ -24,9 +24,37 @@ public static int factor(int num) {
  如何写出递归代码？
  在写函数函数时，要注意这个方法（函数）到底有什么功能。就假设这个方法已经写好了，你就只用调用即可。
  写出递归代码= 终止条件 + 不借助任何方法就能实现的步骤 + 剩下的问题利用这个方法来解决
+e.g.
+ //传入一个整数num就能求出这个num的阶乘值
+     public static int factor(int num){
+    //终止条件
+    if(num == 1) return 1;
 
+    //我只直到num自己本身的值是多少，（Num-1）交给别的函数帮我处理
+    return num * factor(num - 1)
+    }
  */
 
 
+public static void main(String[] args) {
+    int n = 5;
+    System.out.println(factor(n));//120
 
+}
+
+
+    //e.g.求一个整数num的阶乘（这个就是求一个数num的阶乘问题）
+public static int factor (int num){
+    //终止条件
+    if (num == 1) {
+        //无需借助外部力量，我就知道 num = 1 阶乘就是1
+        return 1;
+    }
+    //num >= 2
+    //当前我直只知道num的值是多少，剩下的num -1 我不知道，交给别的函数处理
+    //调用factor(num -1)帮我求出(num -1) !
+    //最后一步只用拼接答案
+    return num * factor(num -1);
+
+}
 }
