@@ -9,7 +9,7 @@ public class JavaSE_4_07 {
     什么场景可以调用方法递归：
             a,一个原问题可以拆分为若干个小问题
             b，拆分后的子问题和原问题除了数据规模不同，解决思路完全相同
-            c,必须存在递归的终止条件（不会无限拆分下去，一定能走到根儿）
+            c,必须存在递归的终止条件（不会无限拆分下去，一定能走到根儿）--拆分的思路就是解决问题的思路
 
 e.g.求一个整数num的阶乘（这个就是求一个数num的阶乘问题）
 public static int factor(int num) {
@@ -55,7 +55,7 @@ public static void main(String[] args) {
 }
 
 
-    //e.g.求一个整数num的阶乘（这个就是求一个数num的阶乘问题）
+/*    //e.g.求一个整数num的阶乘（这个就是求一个数num的阶乘问题）
 public static int factor (int num){
     //终止条件
     if (num == 1) {
@@ -66,9 +66,29 @@ public static int factor (int num){
     //当前我直只知道num的值是多少，剩下的num -1 我不知道，交给别的函数处理
     //调用factor(num -1)帮我求出(num -1) !
     //最后一步只用拼接答案
-    return num * factor(num -1);
-}
+    return num * factor(num - 1);
+}*/
 
+    public static int factor (int num){
+        System.out.println("function starts, num = " + num);
+        if (num == 1) {
+            System.out.println("function ends, num = 1, ret = 1");
+            return 1;
+        }
+        int ret = num * factor(num - 1);
+        System.out.println("function ends, num = " + num + ",ret = " + ret);
+        return ret;
+    }
+    //function starts, num = 5
+    //function starts, num = 4
+    //function starts, num = 3
+    //function starts, num = 2
+    //function starts, num = 1
+    //function ends, num = 1, ret = 1
+    //function ends, num = 2,ret = 2
+    //function ends, num = 3,ret = 6
+    //function ends, num = 4,ret = 24
+    //function ends, num = 5,ret = 120
 
     //定义一个方法，求出1+2+3+...+num的和是多少
 //传入任意一个num的值，我就可以求出1+2+3...+num的和
@@ -90,7 +110,7 @@ public static int add( int num){
         return num;
     }
     //num至少是个十位数，我只能知道个位数是几。
-    // num % 10个位的数字  num / 10 除了个位以外的其他数字
+    // num % 10个位的数字（保留个位）  num / 10 除了个位以外的其他数字
     return num % 10 + add(num/10);
 
 }
