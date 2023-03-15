@@ -38,7 +38,19 @@ e.g.
 
 public static void main(String[] args) {
     int n = 5;
+    //求一个整数num的阶乘
     System.out.println(factor(n));//120
+
+    //定义一个方法，求出1+2+3+...+num的和是多少
+    System.out.println(sum(n));//15
+
+    //写出一个方法，这个方法输入一个非负整数，返回组成这个数的数字之和。
+    System.out.println(add(1729));//19
+    System.out.println(add(12345));//15
+    System.out.println(add(45));//9
+    
+
+
 
 }
 
@@ -55,6 +67,40 @@ public static int factor (int num){
     //调用factor(num -1)帮我求出(num -1) !
     //最后一步只用拼接答案
     return num * factor(num -1);
+}
+
+
+    //定义一个方法，求出1+2+3+...+num的和是多少
+//传入任意一个num的值，我就可以求出1+2+3...+num的和
+public static int sum(int num){
+    if (num == 1){
+        return 1;
+    }
+    // num >= 2
+    //我只知道形参num的值是多少
+    return num + sum(num - 1);
+}
+
+//写出一个方法，这个方法输入一个非负整数，返回组成这个数的数字之和。
+    //1729 = 1 + 7 + 2 + 9 = 19
+        //拆分=>把一个四位数拆分为1 + 剩下三位数的和 => 当前三位数7 + 两位数的和 => 当前十位数2 + 个位数的和
+    //个位数是不用借助任何函数我就能知道答案的值（终止条件）num % 10
+public static int add( int num){
+    if (num < 10){
+        return num;
+    }
+    //num至少是个十位数，我只能知道个位数是几。
+    // num % 10个位的数字  num / 10 除了个位以外的其他数字
+    return num % 10 + add(num/10);
 
 }
+
+
+
+
+
+
+
+
+
 }
