@@ -11,6 +11,21 @@ public class JavaSE_4_07 {
             b，拆分后的子问题和原问题除了数据规模不同，解决思路完全相同
             c,必须存在递归的终止条件（不会无限拆分下去，一定能走到根儿）--拆分的思路就是解决问题的思路
 
+ Recursive: The function keeps calling itself until it reaches the function's termination condition,
+            the end of the first phase
+
+ Return procedure: The process by which a function keeps returning
+
+
+ When you can call method recursion:
+
+ a, an original problem can be split into a number of smaller problems
+
+ b, The split subproblem is the same as the original problem except for the size of the data
+
+ c, there must be a recursive termination condition (don't split indefinitely, must go to the root) -
+    the idea of splitting is the idea of solving the problem
+
 e.g.求一个整数num的阶乘（这个就是求一个数num的阶乘问题）
 public static int factor(int num) {
 
@@ -111,7 +126,7 @@ public static int add( int num){
     }
     //num至少是个十位数，我只能知道个位数是几。
     // num % 10个位的数字（保留个位）  num / 10 除了个位以外的其他数字
-    return num % 10 + add(num/10);
+    return num % 10 + add(num/10);//9 + add(num / 10); // 2 + add(17) // 7 + add(1) // num 1
 
 }
 
