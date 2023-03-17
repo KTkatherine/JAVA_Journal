@@ -63,8 +63,9 @@ public static void main(String[] args) {
     System.out.println(add(1729));//19
     System.out.println(add(12345));//15
     System.out.println(add(45));//9
-    
 
+//Enter any positive integer and find the corresponding Fibonacci number
+    System.out.println(fibo(8));//21
 
 
 }
@@ -130,8 +131,24 @@ public static int add( int num){
 
 }
 
-
-
+//Enter any positive integer and find the corresponding Fibonacci number
+//num = 1,1
+//num = 2,1
+//num = 3,2
+//num = 4,3
+//num = 5,5
+//num = 6,8
+//num = 7,13
+//num = 8,21
+//num = 9,34
+public static int fibo(int num){
+        if (num == 1 || num == 2){
+            return 1;
+        }
+        //斐波那契数= 前一个数的斐波那契数 + 前二个数的斐波那契数
+        //fibo (num) = fibo(num - 1) + fibo(num - 2)
+        return fibo(num - 1) + fibo(num - 2);
+}
 
 
 
