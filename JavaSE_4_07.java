@@ -126,7 +126,7 @@ public static int add( int num){
         return num;
     }
     //num至少是个十位数，我只能知道个位数是几。
-    // num % 10个位的数字（保留个位）  num / 10 除了个位以外的其他数字
+    // num % 10个位的数字（保留个位）  num / 10 除了个位以外的其他数字(丢掉个位数字)
     return num % 10 + add(num/10);//9 + add(num / 10); // 2 + add(17) // 7 + add(1) // num 1
 
 }
@@ -150,7 +150,25 @@ public static int fibo(int num){
         return fibo(num - 1) + fibo(num - 2);
 }
 
+//按顺序输出一个正整数的每一位(只是输出)
+//output each digit of a positive integer in order
+//num = 1234, 输出就是1 2 3 4
 
+    //***思路：
+    //先找到最高位，按照顺序输出
+    //if (num > 9){
+    // 不断找最高位
+    // print (num/10);//不断把当前num 个位数丢掉,去找高位
+    // }
+    //此时已经走到高位
+    //print(num%10);
+
+    public static void printNum(int num){
+        if (num > 9);
+        //还有高位，不能简单输出
+        System.out.println(num + " ");
+        return;
+    }
 
 
 
