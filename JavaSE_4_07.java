@@ -67,7 +67,11 @@ public static void main(String[] args) {
 //Enter any positive integer and find the corresponding Fibonacci number
     System.out.println(fibo(8));//21
 
-
+//按顺序输出一个正整数的每一位(只是输出)
+int num = 1234;
+int num1 = 12345;
+printNum(num);
+printNum(num1);
 }
 
 
@@ -106,7 +110,8 @@ public static int factor (int num){
     //function ends, num = 4,ret = 24
     //function ends, num = 5,ret = 120
 
-    //定义一个方法，求出1+2+3+...+num的和是多少
+
+//定义一个方法，求出1+2+3+...+num的和是多少
 //传入任意一个num的值，我就可以求出1+2+3...+num的和
 public static int sum(int num){
     if (num == 1){
@@ -117,6 +122,8 @@ public static int sum(int num){
     return num + sum(num - 1);
 }
 
+
+
 //写出一个方法，这个方法输入一个非负整数，返回组成这个数的数字之和。
     //1729 = 1 + 7 + 2 + 9 = 19
         //拆分=>把一个四位数拆分为1 + 剩下三位数的和 => 当前三位数7 + 两位数的和 => 当前十位数2 + 个位数的和
@@ -126,10 +133,14 @@ public static int add( int num){
         return num;
     }
     //num至少是个十位数，我只能知道个位数是几。
-    // num % 10个位的数字（保留个位）  num / 10 除了个位以外的其他数字(丢掉个位数字)
+    // num % 10个位的数字（保留个位,并取出个位数的值）  num / 10 除了个位以外的其他数字(丢掉个位数字)
     return num % 10 + add(num/10);//9 + add(num / 10); // 2 + add(17) // 7 + add(1) // num 1
 
 }
+
+
+
+
 
 //Enter any positive integer and find the corresponding Fibonacci number
 //num = 1,1
@@ -150,6 +161,9 @@ public static int fibo(int num){
         return fibo(num - 1) + fibo(num - 2);
 }
 
+
+
+
 //按顺序输出一个正整数的每一位(只是输出)
 //output each digit of a positive integer in order
 //num = 1234, 输出就是1 2 3 4
@@ -163,11 +177,12 @@ public static int fibo(int num){
     //此时已经走到高位
     //print(num%10);
 
-    public static void printNum(int num){
-        if (num > 9);
-        //还有高位，不能简单输出
-        System.out.println(num + " ");
-        return;
+    public static void printNum(int num) {
+        if (num > 9) {
+            //还有高位，不能简单输出
+            printNum(num / 10);
+        }
+        System.out.print(num % 10 + " ");
     }
 
 
