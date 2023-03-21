@@ -15,6 +15,12 @@ public static void main(String[] args) {
     //---------------
     //4 3 2 1
 
+
+    //求一个num对应的斐波那契数
+    System.out.println(fibo(2));
+    System.out.println(fibo(5));
+    System.out.println(fibo(10));
+    System.out.println(fibo(40));
 }
 
 
@@ -39,6 +45,9 @@ public static void main(String[] args) {
         System.out.print(num % 10 + " ");
     }
 
+
+
+
 //传入一个任意的正整数，我就能按照低位到高位的顺序依次打印每一位的数字
     public static void PrintNumReverse(int num){
      if (num < 10){
@@ -49,6 +58,17 @@ public static void main(String[] args) {
         System.out.print(num % 10 + " ");
      //剩下高位交给子函数
         PrintNumReverse(num / 10);
+    }
+
+
+
+
+//求一个num对应的斐波那契数
+    public static int fibo(int num) {
+        if (num == 1 || num == 2) {
+            return num;
+        }
+        return fibo(num - 1) + fibo(num - 2);
     }
 
 }
