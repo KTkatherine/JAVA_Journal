@@ -3,6 +3,10 @@ public class JavaSE_4_08 {
  类名称，每个首字母大写。
 
  */
+
+//在计算fibo(48)计算fibo(3)被计算了多少次
+static int  count = 0;
+
 public static void main(String[] args) {
     int num = 1234;
     printNum(num);//alt + Enter ->快速修正错误(方法调用printNum)
@@ -17,10 +21,18 @@ public static void main(String[] args) {
 
 
     //求一个num对应的斐波那契数
-    System.out.println(fibo(2));
-    System.out.println(fibo(5));
-    System.out.println(fibo(10));
+    System.out.println();
+//    System.out.println(fibo(2));
+//    System.out.println(fibo(5));
+//    System.out.println(fibo(10));
     System.out.println(fibo(40));
+    //1
+    //5
+    //55
+    //102334155//计算这个数用了太长时间，同一个数计算太多次了
+
+    System.out.println("fibo(3) has been counted for " + count + " times");
+    //fibo(3) has been counted for 39088169 times
 }
 
 
@@ -64,9 +76,14 @@ public static void main(String[] args) {
 
 
 //求一个num对应的斐波那契数
+    //在计算fibo(40)计算fibo(3)被计算了多少次
     public static int fibo(int num) {
         if (num == 1 || num == 2) {
-            return num;
+            return 1;
+        }
+        if (num == 3) {
+            //此时在调用fibo(3)
+            count++;
         }
         return fibo(num - 1) + fibo(num - 2);
     }
