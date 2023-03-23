@@ -2,6 +2,11 @@ public class JavaSE_4_08 {
 /**
  类名称，每个首字母大写。
 
+ 递归的优化一般有两种思路：
+    记忆化搜索、减枝（已经被计算过的数字就不再计算，直接取值--利用map集合）
+
+    dp 动态规划 （自底向上解决问题）
+
  */
 
 //在计算fibo(48)计算fibo(3)被计算了多少次
@@ -31,8 +36,14 @@ public static void main(String[] args) {
     //55
     //102334155//计算这个数用了太长时间，同一个数计算太多次了
 
+
+    //    dp 动态规划 （自底向上解决问题）
+    System.out.println(fiboDP(40));//102334155 这次就能快很多
+
     System.out.println("fibo(3) has been counted for " + count + " times");
     //fibo(3) has been counted for 39088169 times
+
+
 }
 
 
@@ -88,4 +99,29 @@ public static void main(String[] args) {
         return fibo(num - 1) + fibo(num - 2);
     }
 
-}
+
+
+
+//    dp 动态规划 （自底向上解决问题）先求出1和2 3和4
+    public static int fiboDP(int num){
+    int last1 = 1;//倒数第一个数
+    int last2 = 1;//倒数第二个数
+    int cur = 0;//当前要计算的斐波那契数
+        for (int i = 3; i <= num; i++) {
+            //fibo(3) = fibo(2) + fibo(1)
+            //fibo(4) = fibo(3) + fibo(2)
+            //fibo(5) = fibo(4) + fibo(3)
+            cur = last2 + last1;
+            last2 = last1;//在下一次循环的时候倒数第二个数等于倒数第一个数fibo(3),倒数第二个数要等与当前的倒数第一个数
+            last1 = cur;
+        }
+        return cur;
+
+
+
+
+        }
+
+    }
+
+
