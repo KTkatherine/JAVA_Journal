@@ -36,11 +36,13 @@ public class JavaSE_4_08 {
                  arr.length
 
         如何访问数组的元素：
- 使用数组名称【要访问的元素相较于第一个元素的偏移量】
+ 使用数组名称【要访问的元素相较于第一个元素的偏移量】---》 索引就是偏移量，相较于数组的第一个元素的单位长度
  使用数组名称【元素的索引】
  int[] arr1 = new int[] {1,3,5,7,9}
     取的第一个元素arr1[0]  最后一个元素的索引arr1.length-1
 
+    如果访问元素组里不存在的元素，系统会出现 ArrayIndexOutOfBoundsException（数组越界异常）,访问了一个非法索引，这个索引在当前数组中根本就不存在
+e.g.arr1[5]
 
 
  */
@@ -89,12 +91,12 @@ public static void main(String[] args) {
     //arr.length
     int[] arr1 = new int[] {1,3,5,7,9};
     int[] arr2 = new int[5];
-    System.out.println(arr1.length);
-    System.out.println(arr2.length);
+    System.out.println(arr1.length);//5
+    System.out.println(arr2.length);//5
 
     //如何访问数组的元素：
-    System.out.println(arr1[0]);
-    System.out.println(arr1[4]);
+    System.out.println(arr1[0]);//1
+    System.out.println(arr1[4]);//9
 }
 
 
