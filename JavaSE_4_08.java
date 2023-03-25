@@ -97,6 +97,14 @@ public static void main(String[] args) {
     //如何访问数组的元素：
     System.out.println(arr1[0]);//1
     System.out.println(arr1[4]);//9
+    
+    //访问arr1的每个元素
+    for (int i = 0; i < arr1.length; i++) {
+        System.out.print(arr1[i] + ",");//1,3,5,7,9,
+    }
+
+        //另外一种方式，JDK1.5引入的
+
 }
 
 
