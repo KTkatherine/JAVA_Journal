@@ -103,7 +103,12 @@ public static void main(String[] args) {
         System.out.print(arr1[i] + ",");//1,3,5,7,9,
     }
 
-        //另外一种方式，JDK1.5引入的
+        //另外一种方式，JDK1.5引入的for each 循环，增强型for循环
+    System.out.println();
+    for (int i : arr1){
+        System.out.print(i + ",");//1,3,5,7,9,
+    }
+
 
 }
 
