@@ -7,8 +7,8 @@ public class JavaSE_4_08 {
 
     dp 动态规划 （自底向上解决问题）
 
- *数组：本质上就是我们能“批量”创建相同类型的变量
-
+ *数组：本质上就是我们能“批量”创建相同类型的变量.
+            引用数据类型
 
  *** 语法 ***
         数组的创建与初始化：
@@ -36,13 +36,18 @@ public class JavaSE_4_08 {
                  arr.length
 
         如何访问数组的元素：
- 使用数组名称【要访问的元素相较于第一个元素的偏移量】---》 索引就是偏移量，相较于数组的第一个元素的单位长度
- 使用数组名称【元素的索引】
- int[] arr1 = new int[] {1,3,5,7,9}
-    取的第一个元素arr1[0]  最后一个元素的索引arr1.length-1
+                 使用数组名称【要访问的元素相较于第一个元素的偏移量】---》 索引就是偏移量，相较于数组的第一个元素的单位长度
+                 使用数组名称【元素的索引】
+                 int[] arr1 = new int[] {1,3,5,7,9}
+                    取的第一个元素arr1[0]  最后一个元素的索引arr1.length-1
 
-    如果访问元素组里不存在的元素，系统会出现 ArrayIndexOutOfBoundsException（数组越界异常）,访问了一个非法索引，这个索引在当前数组中根本就不存在
-e.g.arr1[5]
+                    如果访问元素组里不存在的元素，系统会出现 ArrayIndexOutOfBoundsException（数组越界异常）,访问了一个非法索引，这个索引在当前数组中根本就不存在
+                e.g.arr1[5]
+
+ * 数组和方法之间的关系
+    1.数组作为方法参数
+                创建一个方法，接收任意的整形数组并打印
+                public static void printArr(int[] num) {}
 
 
  */
@@ -55,12 +60,18 @@ public static void main(String[] args) {
     printNum(num);//alt + Enter ->快速修正错误(方法调用printNum)
     //1 2 3 4
 
+
+
+
     //传入一个任意的正整数，我就能按照低位到高位的顺序依次打印每一位的数字
     System.out.println();
     System.out.println("---------------");
     PrintNumReverse(num);
     //---------------
     //4 3 2 1
+
+
+
 
 
     //求一个num对应的斐波那契数
@@ -75,11 +86,19 @@ public static void main(String[] args) {
     //102334155//计算这个数用了太长时间，同一个数计算太多次了
 
 
+
+
+
     //    dp 动态规划 （自底向上解决问题）
     System.out.println(fiboDP(40));//102334155 这次就能快很多
 
     System.out.println("fibo(3) has been counted for " + count + " times");
     //fibo(3) has been counted for 39088169 times
+
+
+
+
+
 
    //数组的创建与初始化
 //int[] arr1 = new int[] {1,3,5,7,9};
@@ -94,20 +113,48 @@ public static void main(String[] args) {
     System.out.println(arr1.length);//5
     System.out.println(arr2.length);//5
 
+
+
+
     //如何访问数组的元素：
     System.out.println(arr1[0]);//1
     System.out.println(arr1[4]);//9
-    
+
+
+
+
     //访问arr1的每个元素
-    for (int i = 0; i < arr1.length; i++) {
+    for (int i = 0; i < arr1.length; i++) { //此处的i表示，数组中每个元素的 索引下标
+                                                //确实拿到了每个数组的元素
         System.out.print(arr1[i] + ",");//1,3,5,7,9,
     }
 
         //另外一种方式，JDK1.5引入的for each 循环，增强型for循环
     System.out.println();
-    for (int i : arr1){
+    for (int i : arr1){ //此处的i表示，从数组的第一个元素开始取值，第一次把第一个元素的值复制一份给i,第二次循环把第二个元素的值复制一份给i,
+                                //以此类推，直到整个数组都遍历结束
+                                        //只能读取数组的元素值，无法修改！i是原数组每个元素的拷贝，并不是实实在在的数组元素
         System.out.print(i + ",");//1,3,5,7,9,
     }
+
+    System.out.println();
+    for (int i = 0; i < arr1.length; i++) {
+        if (i == 2) {
+            arr1[i] = 55;
+        }
+        System.out.print(arr1[i] + ",");//1,3,55,7,9,
+    }
+
+/*    for (int i : arr1) {
+        if(i == 2){
+            i = 55;//没用的不会改变值
+        }
+    }
+    System.out.println(i + ",");*/
+
+
+
+
 
 
 }
@@ -180,7 +227,12 @@ public static void main(String[] args) {
         return cur;
 
 
-
+//打印数组中的每一个数
+        public static void printArr(int[] num){
+            for(int i : num){//数组中的每一个数
+                System.out.println();
+            }
+        }
 
         }
 
