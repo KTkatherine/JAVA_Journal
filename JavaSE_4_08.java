@@ -228,7 +228,7 @@ public static void main(String[] args) {
 
 
 //打印数组中的每一个数
-        public static void printArr(int[] num){
+        public static void printArr(int[] ){
             for(int i : num){//数组中的每一个数
                 System.out.println();
             }
