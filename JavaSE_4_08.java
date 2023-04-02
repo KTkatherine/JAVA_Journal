@@ -49,6 +49,8 @@ public class JavaSE_4_08 {
                 创建一个方法，接收任意的整形数组并打印
                 public static void printArr(int[] num) {}
 
+    2.关于引用数据类型的理解
+                栈-先进先出LIFO结构，方法中的局部变量和形参都在栈中储存。当方法调用结束除栈时，临时变量都会被销毁
 
  */
 
@@ -153,7 +155,23 @@ public static void main(String[] args) {
     System.out.println(i + ",");*/
 
 
+//打印数组中的每一个数
+    System.out.println();
+    int[] arr = {1,3,5};
+    int[] Arr1 = {2,4,6,8};
+    printArr(arr);
+    printArr(Arr1); //arr arr是实参：在调用方法的时候，给方法中传递的参数
+   // 1 3 5 2 4 6 8
 
+
+
+
+
+////2.关于引用数据类型的理解
+int x = 10;
+int y = 20;
+swap(x,y);
+    System.out.println("x = " + x + ", y = " + y);//x = 10, y = 20
 
 
 
@@ -212,10 +230,10 @@ public static void main(String[] args) {
 
 
 //    dp 动态规划 （自底向上解决问题）先求出1和2 3和4
-    public static int fiboDP(int num){
-    int last1 = 1;//倒数第一个数
-    int last2 = 1;//倒数第二个数
-    int cur = 0;//当前要计算的斐波那契数
+    public static int fiboDP(int num) {
+        int last1 = 1;//倒数第一个数
+        int last2 = 1;//倒数第二个数
+        int cur = 0;//当前要计算的斐波那契数
         for (int i = 3; i <= num; i++) {
             //fibo(3) = fibo(2) + fibo(1)
             //fibo(4) = fibo(3) + fibo(2)
@@ -225,16 +243,30 @@ public static void main(String[] args) {
             last1 = cur;
         }
         return cur;
+    }
+
+
 
 
 //打印数组中的每一个数
-        public static void printArr(int[] ){
-            for(int i : num){//数组中的每一个数
-                System.out.println();
+        public static void printArr(int[] num) {//int[] num是形参：在方法定义时的参数
+            for(int i : num) {//数组中的每一个数
+                System.out.print(i + " ");
             }
         }
 
-        }
+
+
+//2.关于引用数据类型的理解
+    public static void swap(int x, int y){
+    int temp = x;
+    x = y;
+    y = temp;
+    }
+
+    public  static void swapArr(int[] arr){
+    
+    }
 
     }
 
