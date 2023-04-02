@@ -173,6 +173,10 @@ int y = 20;
 swap(x,y);
     System.out.println("x = " + x + ", y = " + y);//x = 10, y = 20
 
+int[] aRr = {10,20};// int[] 数组引用          aRr new int[]{10,20}数组对象
+swapArr(aRr);
+    System.out.println("aRr[0] = " + aRr[0] + ", aRr[1] = " + aRr[1] );//aRr[0] = 20, aRr[1] = 10
+
 
 
 }
@@ -264,8 +268,10 @@ swap(x,y);
     y = temp;
     }
 
-    public  static void swapArr(int[] arr){
-    
+    public  static void swapArr(int[] aRr){
+    int temp = aRr[0];
+        aRr[0] = aRr[1];
+        aRr[1] = temp;
     }
 
     }
