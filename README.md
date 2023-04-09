@@ -16,7 +16,6 @@
        The relationship between arrays and methods
         1. Arrays as method arguments
        Create a method that takes an arbitrary array of integers and prints them public static void printArr(int[] num) {}
-  
         2. Understanding of reference data types
         Stack - First in First OUT LIFO structure, local variables and parameters of methods are stored on the stack. When the method call ends the stack, the           temporary variable is destroyed    
         
