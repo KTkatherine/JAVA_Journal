@@ -16,10 +16,20 @@ public class JavaSE_4_10 {
         //数组拷贝
         int[] data = new int[] {1,2,3,4,5,6};
         //JDK 工具类拷贝的用法：
-        int[] data1 = Arrays.copyOf(data,data.length); // data 是原数组名称， 后面的data.length是要拷贝的数组的长度
+        /*int[] data1 = Arrays.copyOf(data,data.length); // data 是原数组名称， 后面的data.length是要拷贝的数组的长度
         // data 是原数组名称， 后面的data.length是要拷贝的数组的长度
-            //1.若新数组长度<原数组长度 部份拷贝： 从元素的第一个元素开始复制值，直到元素个数达到新数组的长度停止。
-        int[]
+
+            //1.若新数组长度<原数组长度 部份拷贝： 从元素的第一个元素开始复制值，直到元素个数达到新数组的长度停止。*/
+            //2.若新数组长度 = 原数组长度 全拷贝
+            //3.若新数组长度> 原数组长度，全拷贝，剩余的元素用该数据类型的默认值来补
+
+        /*int[] data1 = Arrays.copyOf(data, 3);
+        System.out.println(arr2String(data1));//[1,2,3,]*/
+
+                //e.g.3.若新数组长度> 原数组长度，全拷贝，剩余的元素用该数据类型的默认值来补
+        int[] data1 = Arrays.copyOf(data, 10);
+        System.out.println(arr2String(data1));//用0补齐，因为整型的默认值就是0.//[1,2,3,4,5,6,0,0,0,0,]
+
     }
 
     //自己实现仿照JDK的数组转字符串方法
