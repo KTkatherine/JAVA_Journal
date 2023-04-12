@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class JavaSE_4_10 {
     // 如何把一个数组对象转为字符串对象
     public static void main(String[] args) {
-        int[] data = {1,3,5};
+/*        int[] data = {1,3,5};
         //JDK内置的工具类
         String str = Arrays.toString(data);
 
@@ -11,7 +11,15 @@ public class JavaSE_4_10 {
         String str3 = arr3String(data);
         System.out.println(str);//[1, 3, 5]
         System.out.println(str2);//[1,3,5,]
-        System.out.println(str3);//[1, 3, 5]
+        System.out.println(str3);//[1, 3, 5]*/
+
+        //数组拷贝
+        int[] data = new int[] {1,2,3,4,5,6};
+        //JDK 工具类拷贝的用法：
+        int[] data1 = Arrays.copyOf(data,data.length); // data 是原数组名称， 后面的data.length是要拷贝的数组的长度
+        // data 是原数组名称， 后面的data.length是要拷贝的数组的长度
+            //1.若新数组长度<原数组长度 部份拷贝： 从元素的第一个元素开始复制值，直到元素个数达到新数组的长度停止。
+        int[]
     }
 
     //自己实现仿照JDK的数组转字符串方法
