@@ -13,7 +13,7 @@ public class JavaSE_4_10 {
         System.out.println(str2);//[1,3,5,]
         System.out.println(str3);//[1, 3, 5]*/
 
-        //数组拷贝
+//数组拷贝
         int[] data = new int[] {1,2,3,4,5,6};
         //JDK 工具类拷贝的用法：
         /*int[] data1 = Arrays.copyOf(data,data.length); // data 是原数组名称， 后面的data.length是要拷贝的数组的长度
@@ -30,6 +30,11 @@ public class JavaSE_4_10 {
         int[] data1 = Arrays.copyOf(data, 10);
         System.out.println(arr2String(data1));//用0补齐，因为整型的默认值就是0.//[1,2,3,4,5,6,0,0,0,0,]
 
+
+//数组的区间拷贝，从开始位置拷贝到结束位置，左闭右开
+        int[] data2 = Arrays.copyOfRange(data,1,4);
+        System.out.println(arr2String(data2));//[2,3,4,]
+
     }
 
     //自己实现仿照JDK的数组转字符串方法
@@ -43,7 +48,7 @@ public class JavaSE_4_10 {
         return ret;
     }
 
-    //希望最后一个元素之后不加逗号
+//希望最后一个元素之后不加逗号
     public static String arr3String(int[] num){
         String ret = "[";
         for (int i = 0; i < num.length; i++) {
@@ -56,4 +61,9 @@ public class JavaSE_4_10 {
         return ret;
 
     }
+
+
+
+// 给定一个整数数组，找出这个数的最大值？“打擂”
+    
 }
