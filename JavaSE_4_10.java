@@ -35,6 +35,9 @@ public class JavaSE_4_10 {
         int[] data2 = Arrays.copyOfRange(data,1,4);
         System.out.println(arr2String(data2));//[2,3,4,]
 
+        int[] dataMax = {1,7,6,4,2,3,9,11,15,20,87,12};
+        System.out.println(max(dataMax));
+
     }
 
     //自己实现仿照JDK的数组转字符串方法
@@ -65,5 +68,13 @@ public class JavaSE_4_10 {
 
 
 // 给定一个整数数组，找出这个数的最大值？“打擂”
-    
+    public static int max(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length ; i++) {//从第二个数开始比
+            if (arr[i] > max){
+                max = arr[i];
+            }
+        }
+        return max;
+    }
 }
