@@ -35,16 +35,25 @@ public class JavaSE_4_10 {
         int[] data2 = Arrays.copyOfRange(data,1,4);
         System.out.println(arr2String(data2));//[2,3,4,]
 
+
+// 给定一个整数数组，找出这个数的最大值？“打擂”
         int[] dataMax = {1,7,6,4,2,3,9,11,15,20,87,12};
         System.out.println(max(dataMax));//87
 
         System.out.println(data.length);//6
 
+
+// 求一个数组的平均值 = 数组和数组长度
         System.out.println(avg(dataMax));//14.75
+
+
+//查找一个数组中是否包含指定元素，若存在，返回第一个存在该元素的索引，若不存在返回-1
+        System.out.println(find(dataMax, 15));//8
+        System.out.println(find(dataMax,100));//-1
 
     }
 
-    //自己实现仿照JDK的数组转字符串方法
+//自己实现仿照JDK的数组转字符串方法
     public static String arr2String(int[] num){
         String ret = "[";
         for (int i = 0; i < num.length; i++) {
@@ -90,8 +99,23 @@ public class JavaSE_4_10 {
         for(int i : data) {
             sum += i;
         }
-        return sum / (double)data.length;
+        return sum / (double)data.length;// * 1.0 也可以
         }
+
+
+
+//查找
+    //查找一个数组中是否包含指定元素，若存在，返回第一个存在该元素的索引，若不存在返回-1
+    public static int find(int[]arr, int toFind) {// （数组， 指定元素）
+
+        //遍历
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == toFind){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 }
