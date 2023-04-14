@@ -19,7 +19,9 @@
         2. Understanding of reference data types
         Stack - First in First OUT LIFO structure, local variables and parameters of methods are stored on the stack. When the method call ends the stack, the           temporary variable is destroyed    
         
-04_10: Array2.0: Copy of arrays, Transfer array to string by implement my method that mimics JDK,  Given an array of integers, find the maximum value of these          number. 
+04_10: Array2.0: Copy of arrays. Transfer array to string by implement my method that mimics JDK.  Given an array of integers and find the maximum value of these          number. Find the average of an array. Finds whether an array contains a specified element.
+
+04_
       
   
 
