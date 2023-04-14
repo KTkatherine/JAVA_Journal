@@ -36,7 +36,11 @@ public class JavaSE_4_10 {
         System.out.println(arr2String(data2));//[2,3,4,]
 
         int[] dataMax = {1,7,6,4,2,3,9,11,15,20,87,12};
-        System.out.println(max(dataMax));
+        System.out.println(max(dataMax));//87
+
+        System.out.println(data.length);//6
+
+        System.out.println(avg(dataMax));//14.75
 
     }
 
@@ -77,4 +81,17 @@ public class JavaSE_4_10 {
         }
         return max;
     }
+
+
+
+// 求一个数组的平均值 = 数组和数组长度
+    public static double avg(int[] data){
+        int sum = 0;
+        for(int i : data) {
+            sum += i;
+        }
+        return sum / (double)data.length;
+        }
+
+
 }
