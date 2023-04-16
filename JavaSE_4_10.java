@@ -117,5 +117,15 @@ public class JavaSE_4_10 {
         return -1;
     }
 
+//二分查找，必须在有序的数组中进行查找（升序或者降序）：
+    //不断的比较待查找元素和中间元素的大小关系，不断缩小元素索引
+    // 寻找元素toFind小于arr[mid],元素小于arr[mid...right], 在right = mid - 1中查找
+    // 寻找元素toFind等于arr[mid]toFind == arr[mid]
+    // 寻找元素toFind大于arr[mid]，在left = mid + 1中查找
 
+    //找到元素返回索引，没找到返回-1
+    public static int binarySearch(int[] arr, int toFind){
+        //定义区间的开始和结束位置
+        
+    }
 }
