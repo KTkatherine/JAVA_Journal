@@ -66,6 +66,13 @@ public class JavaSE_4_10 {
         System.out.println(binarySearch(daTa,10));
         //-1
 
+        //感受二分查找的速度
+        int count = 0;//记录查找的次数
+        int[] Data = new int[100000];
+        //给10w的整型数组赋值
+        for (int i = 0; i < Data.length; i++) {
+            data[i] = i + 1;
+        }
 
 
     }
