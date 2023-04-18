@@ -55,9 +55,16 @@ public class JavaSE_4_10 {
 //二分查找，必须在有序的数组中进行查找（升序或者降序）：
         int[] daTa = {1,2,3,4,5,6,7};
         System.out.println(binarySearch(daTa,2));
+        //found the element
+        //1
         System.out.println(binarySearch(daTa,6));
+        //found the element
+        //5
         System.out.println(binarySearch(daTa,7));
+        //found the element
+        //6
         System.out.println(binarySearch(daTa,10));
+        //-1
 
 
 
@@ -131,6 +138,8 @@ public class JavaSE_4_10 {
     // 寻找元素toFind大于arr[mid]，在left = mid + 1中查找
 
     //找到元素返回索引，没找到返回-1
+    //left = right说明还有一元素没有判断
+    //循环终止条件一定是left > right,区间中一个元素都没有才终止循环
     public static int binarySearch(int[] arr, int toFind) {
         //定义区间的开始和结束位置
         int left = 0;
