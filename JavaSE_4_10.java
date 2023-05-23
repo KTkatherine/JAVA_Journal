@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class JavaSE_4_10 {
     // 如何把一个数组对象转为字符串对象
+    static int count = 0;//记录查找的次数
     public static void main(String[] args) {
 /*        int[] data = {1,3,5};
         //JDK内置的工具类
@@ -67,12 +68,15 @@ public class JavaSE_4_10 {
         //-1
 
         //感受二分查找的速度
-        int count = 0;//记录查找的次数
+
         int[] Data = new int[100000];
         //给10w的整型数组赋值
         for (int i = 0; i < Data.length; i++) {
-            data[i] = i + 1;
+            Data[i] = i + 1;
         }
+        System.out.println(find(Data, 99999));//99998 (倒数第二个的索引),顺序查找需要比较99999次
+        System.out.println(binarySearch(Data,99999));//99998
+        System.out.println("二分查找一共比较了" + count + "次");//二分查找一共比较了26次. 二分查找查查找的次数n = log2N ==> n/2/2/2/2/2..== 1 对数算法
 
 
     }
@@ -138,6 +142,8 @@ public class JavaSE_4_10 {
         return -1;
     }
 
+
+
 //二分查找，必须在有序的数组中进行查找（升序或者降序）：
     //不断的比较待查找元素和中间元素的大小关系，不断缩小元素索引
     // 寻找元素toFind小于arr[mid],元素小于arr[mid...right], 在right = mid - 1中查找
@@ -152,6 +158,7 @@ public class JavaSE_4_10 {
         int left = 0;
         int right = arr.length - 1;
         while (left <= right) {
+            count ++;
             int mid = (left + right) / 2;
             if (toFind < arr[mid]) {
                 right = mid - 1;
@@ -166,4 +173,34 @@ public class JavaSE_4_10 {
         //整个区间没有待查找元素就返回-1
         return -1;
     }
+
+    //递归写法
+    //在arr[left.. right]区间中找元素toFind的索引，没找到返回-1
+    public static int binarySearchRecursion(int[] arr, int toFind, int left, int right){
+        if (left > right) {
+            //这就是个空区间，一个元素都没有，根本不用找了
+            return -1;
+        }
+        //中间还有元素，只能知道中间元素
+        int mid = (left + right) / 2;
+        if (arr[mid] == toFind){
+            return  mid;
+        }else if (toFind < arr[mid]){
+            return binarySearchRecursion(arr,toFind, left,mid-1);
+        }
+        //toFind > arr[mid] 右侧区间查找
+        return binarySearchRecursion(arr,toFind,mid + 1, right);
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 }
