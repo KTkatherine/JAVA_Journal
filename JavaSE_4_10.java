@@ -79,6 +79,9 @@ public class JavaSE_4_10 {
         System.out.println("二分查找一共比较了" + count + "次");//二分查找一共比较了26次. 二分查找查查找的次数n = log2N ==> n/2/2/2/2/2..== 1 对数算法
 
 
+        int[] testData = new int[]{1,2,3,4,5,6,7,8};
+        System.out.println(isSortedArray(testData));
+
     }
 
     //自己实现仿照JDK的数组转字符串方法
@@ -176,20 +179,40 @@ public class JavaSE_4_10 {
 
     //递归写法
     //在arr[left.. right]区间中找元素toFind的索引，没找到返回-1
-    public static int binarySearchRecursion(int[] arr, int toFind, int left, int right){
+    public static int binarySearchRecursion(int[] arr, int toFind, int left, int right) {
         if (left > right) {
             //这就是个空区间，一个元素都没有，根本不用找了
             return -1;
         }
         //中间还有元素，只能知道中间元素
         int mid = (left + right) / 2;
-        if (arr[mid] == toFind){
-            return  mid;
-        }else if (toFind < arr[mid]){
-            return binarySearchRecursion(arr,toFind, left,mid-1);
+        if (arr[mid] == toFind) {
+            return mid;
+        } else if (toFind < arr[mid]) {
+            return binarySearchRecursion(arr, toFind, left, mid - 1);
         }
         //toFind > arr[mid] 右侧区间查找
-        return binarySearchRecursion(arr,toFind,mid + 1, right);
+        return binarySearchRecursion(arr, toFind, mid + 1, right);
+
+    }
+
+
+
+
+//判断一个数组是否是有序数组，默认升序（前一个元素<= 后一个元素）==》 找反列
+        //e.g.123456879 >> false
+        public static boolean isSortedArray(int[] arr) {
+            for (int i = 0; i < arr.length - 1; i++) {//arr.length 索引是到最后一个数，但其仍然需要比较,会出现报错Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 8
+                // 所以要取到倒数第二个数arr.length - 1
+                if (arr[i] > arr[i + 1]) {
+                    return false;
+                }
+            }
+                System.out.println("Array is an ordered array");
+                return true;
+            }
+
+
 
 
 
@@ -203,4 +226,3 @@ public class JavaSE_4_10 {
 
 
 
-}
