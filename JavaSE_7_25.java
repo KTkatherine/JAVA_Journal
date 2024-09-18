@@ -6,7 +6,15 @@ public class JavaSE_7_25 {
 
     public static void main(String[] args) {
         //1! + 2! + 3! + 4! + 5!
-        int i = 1;
+        int sum = 0;
+        for (int k = 1; k <= 5; k++) {
+            int ret = 1;
+            for (int i = 0; i <= k; i++) {
+                ret *= i;
+            }
+            sum += ret;
+        }
+        System.out.println(sum);
     }
 
     public static void main6(String[] args) {
