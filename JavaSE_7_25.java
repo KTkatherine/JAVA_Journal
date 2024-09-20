@@ -1,20 +1,38 @@
 package JavaSE_7_25;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
+import java.util.Random;
 import java.util.Scanner;
 public class JavaSE_7_25 {
-
     public static void main(String[] args) {
+        Random random = new Random();
+        int randNum = random.nextInt(100);//[0-100)+1 [1-101)
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+            System.out.println("guess the number");
+            int num = scanner.nextInt();
+            if(num > randNum){
+                System.out.println("too big");
+            }else if (num == randNum){
+                System.out.println("Bingo");
+                break;
+            }else {
+                System.out.println("too small");
+            }
+        }
+
+    }
+
+    public static void main7(String[] args) {
         //1! + 2! + 3! + 4! + 5!
         int sum = 0;
-        for (int k = 1; k <= 5; k++) {
-            int ret = 1;
-            for (int i = 0; i <= k; i++) {
-                ret *= i;
-            }
-            sum += ret;
+        int factorial = 1;
+        for (int i = 1; i <= 5; i++) {
+                factorial *= i;
+
+            sum += factorial;
         }
-        System.out.println(sum);
+        System.out.println(sum);//153
     }
 
     public static void main6(String[] args) {
