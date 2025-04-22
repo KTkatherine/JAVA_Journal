@@ -12,7 +12,7 @@ public class JavaSE_7_28 {
 
     }
 
-    public static void toString(int[] array) {
+    public static String toString(int[] array) {
         String ret = "[";
         for (int i = 0; i < array.length; i++) {
             ret += array[i];
@@ -48,7 +48,7 @@ public class JavaSE_7_28 {
         //增强for 循环，for - each
         for (int x: array
              ) {
-            System.out.println(x + " ");//1 2 3 4//******for在循环遍历的时候是有下标的
+            System.out.println(x + " ");//1 2 3 4//******for-each在循环遍历的时候是没有下标的
 
         }
         System.out.println();
